@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Cars</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="icon" href="../static/image/logo.png">
+</head>
+
+<body>
+    <div class="navigation">
+        <div class="navigation1">
+            <img src="../static/image/logo.png" alt="Logo" class="logo">
+            <a href="/Home">Home</a>
+            <a href="/About">Cars</a>
+            <a href="/Buy">Buy</a>
+        </div>
+    </div>
+
+    <div id="buy">
+        <div class="h1">
+            <h1>Fill your information down Below.</h1><br><br>
+        </div>
+        <form id="form" @submit.prevent="submitForm">
+            <input id="input" v-model="email" placeholder="Email" /><br><br>
+            <input id="input" v-model="phone" placeholder="Phone Number" /><br><br>
+            <button id="button" type="submit">Submit</button>
+        </form>
+
+        <p v-if="error" style="color: red;">{{ error }}</p>
+        <p v-if="success" style="color: green;">{{ success }}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../static/buy.js"></script>
+</body>
+
+</html>
